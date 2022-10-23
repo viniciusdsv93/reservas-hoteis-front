@@ -191,6 +191,7 @@ const ReservationsCreateInputs = () => {
 											placeholder="Digite o nome..."
 											type="text"
 											maxLength={100}
+											// @ts-ignore
 											{...register(`hospedes[${item}].nome`)}
 										/>
 									</S.InputField>
@@ -200,6 +201,7 @@ const ReservationsCreateInputs = () => {
 											placeholder="Digite o sobrenome..."
 											type="text"
 											maxLength={100}
+											// @ts-ignore
 											{...register(`hospedes[${item}].sobrenome`)}
 										/>
 									</S.InputField>

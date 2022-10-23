@@ -1,10 +1,5 @@
-import * as S from "./styled";
-import * as Yup from "yup";
-import { yupResolver } from "@hookform/resolvers/yup";
-import { SubmitHandler, useForm } from "react-hook-form";
-import axios from "axios";
-import swal from "sweetalert";
 import { Guest } from "../../types/ReservationType";
+import * as S from "./styled";
 
 type propTypes = {
 	currGuests: Guest[];

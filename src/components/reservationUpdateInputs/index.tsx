@@ -1,15 +1,12 @@
-import axios from "axios";
-import * as S from "./styled";
-import * as Yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { SubmitHandler, useForm } from "react-hook-form";
-import swal from "sweetalert";
-import Button from "../button";
-import { api } from "../../services/api/api";
-import { Link } from "react-router-dom";
-import { ReservationType } from "../../types/ReservationType";
 import React, { useContext, useState } from "react";
+import { SubmitHandler, useForm } from "react-hook-form";
+import { Link } from "react-router-dom";
+import * as Yup from "yup";
 import { updateReservationContext } from "../../contexts/updateReservationContext";
+import { ReservationType } from "../../types/ReservationType";
+import Button from "../button";
+import * as S from "./styled";
 
 const updateReservationSchema = Yup.object().shape({
 	id_hotel: Yup.string().required("Insira o ID de um hotel"),
@@ -208,6 +205,7 @@ const ReservationsUpdateInputs = () => {
 											placeholder="Digite o nome..."
 											type="text"
 											maxLength={100}
+											// @ts-ignore
 											{...register(`hospedes[${item}].nome`)}
 										/>
 									</S.InputField>
@@ -217,6 +215,7 @@ const ReservationsUpdateInputs = () => {
 											placeholder="Digite o sobrenome..."
 											type="text"
 											maxLength={100}
+											// @ts-ignore
 											{...register(`hospedes[${item}].sobrenome`)}
 										/>
 									</S.InputField>

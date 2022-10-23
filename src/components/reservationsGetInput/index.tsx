@@ -1,13 +1,11 @@
-import * as S from "./styled";
-import * as Yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { SubmitHandler, useForm } from "react-hook-form";
 import swal from "sweetalert";
-import { HotelType } from "../../types/HotelType";
+import * as Yup from "yup";
 import { api } from "../../services/api/api";
-import { getSingleHotelType } from "../../types/GetSingleHotelType";
-import { ReservationType } from "../../types/ReservationType";
 import { getSingleReservationType } from "../../types/GetSingleReservationType";
+import { ReservationType } from "../../types/ReservationType";
+import * as S from "./styled";
 
 const getReservationSchema = Yup.object().shape({
 	reservationNumber: Yup.string().required("Por favor, insira o número da reserva"),

@@ -1,15 +1,14 @@
-import axios from "axios";
-import * as S from "./styled";
-import * as Yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-import { SubmitHandler, useForm } from "react-hook-form";
-import swal from "sweetalert";
-import Button from "../button";
-import { HotelType } from "../../types/HotelType";
-import { api } from "../../services/api/api";
-import { Link } from "react-router-dom";
 import { useContext } from "react";
+import { SubmitHandler, useForm } from "react-hook-form";
+import { Link } from "react-router-dom";
+import swal from "sweetalert";
+import * as Yup from "yup";
 import { updateHotelContext } from "../../contexts/updateHotelContext";
+import { api } from "../../services/api/api";
+import { HotelType } from "../../types/HotelType";
+import Button from "../button";
+import * as S from "./styled";
 
 const updateHotelSchema = Yup.object().shape({
 	nome: Yup.string()

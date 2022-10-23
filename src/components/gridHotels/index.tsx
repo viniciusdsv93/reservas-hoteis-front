@@ -1,13 +1,9 @@
-import { useEffect, useState } from "react";
-import axios from "axios";
-import * as S from "./styled";
-import Button from "../button";
-import swal from "sweetalert";
-import "./swalStyle.css";
-import { HotelType } from "../../types/HotelType";
-import { useNavigate } from "react-router-dom";
 import { useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import { updateHotelContext } from "../../contexts/updateHotelContext";
+import { HotelType } from "../../types/HotelType";
+import * as S from "./styled";
+import "./swalStyle.css";
 
 type propTypes = {
 	hotelsList: HotelType[];
