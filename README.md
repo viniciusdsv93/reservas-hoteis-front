@@ -63,6 +63,9 @@ igualmente exibidas mensagens de orientação caso tente cadastrar com algum cam
 
 ### Como utilizar
 
+Foi realizado o deploy da aplicação pela Vercel, sendo acessada pelo seguinte link:
+https://reservas-hoteis-front-5z2x.vercel.app/
+
 Para executar localmente, será preciso clonar o repositório e executar o comando 'npm
 install' no terminal para instalar as dependências necessárias.
 
