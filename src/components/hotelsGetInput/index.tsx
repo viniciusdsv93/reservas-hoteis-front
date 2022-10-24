@@ -29,14 +29,13 @@ const HotelsGetInput = ({ setHotelsList }: propTypes) => {
 	const getSingleHotelData: SubmitHandler<getSingleHotelType> = async (values) => {
 		try {
 			const response = await api.get(`/buscarHotel/${values.cnpj}`);
-			console.log("get single hotel", response);
+
 			if (response.status === 200) {
 				const arrayHotel = [];
 				arrayHotel.push(response.data);
 				setHotelsList(arrayHotel);
 			}
 		} catch (error: any) {
-			console.log("error", error);
 			if (error.response.status === 404) {
 				swal("Hotel não localizado");
 			} else {
@@ -48,7 +47,6 @@ const HotelsGetInput = ({ setHotelsList }: propTypes) => {
 	const getListOfHotels = async () => {
 		const response = await api.get("/buscarHotel");
 		setHotelsList(response.data);
-		console.log("get all hotels", response);
 	};
 
 	return (

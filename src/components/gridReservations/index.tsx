@@ -57,7 +57,6 @@ const GridReservations = ({ reservationsList }: propTypes) => {
 									<td>
 										<S.GuestsButton
 											onClick={() => {
-												console.log("reservation", reservation);
 												if (reservation.hospedes) {
 													setCurrGuests(reservation.hospedes);
 													setIsGuestsModalOpen(true);

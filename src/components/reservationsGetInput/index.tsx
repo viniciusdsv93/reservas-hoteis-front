@@ -27,12 +27,10 @@ const ReservationsGetInput = ({ setReservationsList }: propTypes) => {
 	const getSingleReservationData: SubmitHandler<getSingleReservationType> = async (
 		values
 	) => {
-		console.log("reservas", values);
 		try {
 			const response = await api.get(
 				`/buscarReservaHospede/${values.reservationNumber}`
 			);
-			console.log("get single hotel", response);
 			if (response.status === 200) {
 				const arrayReservations = [];
 				arrayReservations.push(response.data);

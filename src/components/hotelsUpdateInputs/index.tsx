@@ -41,8 +41,6 @@ const HotelUpdateInputs = () => {
 	});
 
 	const handleUpdateHotel: SubmitHandler<HotelType> = async (values) => {
-		console.log("values", values);
-
 		try {
 			const response = await api.put("/atualizarHotel", {
 				name: values.nome,
@@ -51,10 +49,9 @@ const HotelUpdateInputs = () => {
 				state: values.estado,
 				city: values.cidade,
 			});
-			console.log("response", response);
+
 			swal("Hotel atualizado com sucesso");
 		} catch (error: any) {
-			console.log("error", error);
 			if (error.response.data.why === "hotel-não-localizado") {
 				swal("Erro: Hotel não localizado");
 			} else {
@@ -71,10 +68,7 @@ const HotelUpdateInputs = () => {
 			<S.Paragraph>Por favor, altere os dados do hotel:</S.Paragraph>
 			<S.Form action="" onSubmit={handleSubmit(handleUpdateHotel)}>
 				<S.InputField>
-					<S.InputTitle
-						onClick={() => console.log("hotelToBeUpdated", hotelToBeUpdated)}>
-						Nome:
-					</S.InputTitle>
+					<S.InputTitle>Nome:</S.InputTitle>
 					<S.Input
 						placeholder="Digite o nome..."
 						type="text"

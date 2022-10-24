@@ -30,8 +30,6 @@ const HotelsCreateInputs = () => {
 	});
 
 	const handleInsertNewHotel: SubmitHandler<HotelType> = async (values) => {
-		console.log("values", values);
-
 		try {
 			const response = await api.post("/cadastrarHotel", {
 				name: values.nome,

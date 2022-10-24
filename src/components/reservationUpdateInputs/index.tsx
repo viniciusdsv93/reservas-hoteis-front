@@ -60,8 +60,6 @@ const ReservationsUpdateInputs = () => {
 	});
 
 	const handleUpdateReservation: SubmitHandler<ReservationType> = async (values) => {
-		console.log("values", values);
-
 		const formattedGuests = values.hospedes?.map((guest) => {
 			return {
 				name: guest.nome,
@@ -191,7 +189,6 @@ const ReservationsUpdateInputs = () => {
 						defaultValue={0}
 						{...register("numHospedes")}
 						onChange={(e) => setNumTotalHospedes(Number(e.target.value))}
-						onClick={() => console.log("arrayRender", arrayRender)}
 					/>
 				</S.InputField>
 				{errors.numHospedes && (
