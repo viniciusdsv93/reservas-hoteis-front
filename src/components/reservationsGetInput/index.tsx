@@ -59,7 +59,7 @@ const ReservationsGetInput = ({ setReservationsList }: propTypes) => {
 			</p>
 			<S.Form action="" onSubmit={handleSubmit(getSingleReservationData)}>
 				<S.InputField>
-					<S.InputTitle>Num. Reserva:</S.InputTitle>
+					<S.InputTitle>Reserva:</S.InputTitle>
 					<S.Input
 						placeholder="Digite o número da reserva..."
 						type="text"

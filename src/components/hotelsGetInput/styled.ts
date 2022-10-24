@@ -8,6 +8,12 @@ export const InputsField = styled.div`
 	flex-direction: column;
 	gap: 15px;
 	border-top: 10px solid hsl(180, 62%, 55%);
+
+	p {
+		@media (max-width: 550px) {
+			font-size: 14px;
+		}
+	}
 `;
 
 export const Input = styled.input`
@@ -18,7 +24,7 @@ export const Input = styled.input`
 	padding: 5px 15px;
 	font-size: 16px;
 	font-family: "Poppins", sans-serif;
-	width: 100%;
+	flex: 1;
 	&::placeholder {
 		@media (max-width: 768px) {
 			font-size: 14px;
@@ -34,6 +40,10 @@ export const InputField = styled.div`
 
 export const InputTitle = styled.p`
 	margin-right: 15px;
+
+	@media (max-width: 550px) {
+		font-size: 14px;
+	}
 `;
 
 export const InputErrorMessage = styled.span`
@@ -76,7 +86,7 @@ export const ButtonsField = styled.div`
 	justify-content: space-between;
 	gap: 20px;
 
-	@media (max-width: 550px) {
+	@media (max-width: 780px) {
 		flex-direction: column;
 		gap: 15px;
 		align-items: center;

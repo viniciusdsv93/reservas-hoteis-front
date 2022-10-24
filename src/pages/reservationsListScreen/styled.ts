@@ -16,6 +16,10 @@ export const Container = styled.div`
 	backdrop-filter: blur(6px);
 	-webkit-backdrop-filter: blur(6px);
 
+	@media (max-width: 780px) {
+		width: 80vw;
+	}
+
 	label {
 		display: flex;
 		justify-content: space-between;

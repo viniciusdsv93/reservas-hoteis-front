@@ -55,7 +55,9 @@ const HotelsCreateInputs = () => {
 			<Link to={"/"}>
 				<Button content="Listar Hotéis" onClickHandler={() => {}} />
 			</Link>
-			<p>Por favor, insira aqui os dados do hotel a ser cadastrado:</p>
+			<S.Paragraph>
+				Por favor, insira aqui os dados do hotel a ser cadastrado:
+			</S.Paragraph>
 			<S.Form action="" onSubmit={handleSubmit(handleInsertNewHotel)}>
 				<S.InputField>
 					<S.InputTitle>Nome:</S.InputTitle>

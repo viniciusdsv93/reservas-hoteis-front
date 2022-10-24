@@ -21,7 +21,7 @@ export const Grid = styled.div`
 
 	th {
 		text-align: start;
-		min-width: fit-content;
+		min-width: 80px;
 	}
 
 	tr {

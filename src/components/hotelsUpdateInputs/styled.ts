@@ -10,6 +10,14 @@ export const InputsField = styled.div`
 	border-top: 10px solid hsl(180, 62%, 55%);
 `;
 
+export const Paragraph = styled.p`
+	font-size: 16px;
+
+	@media (max-width: 550px) {
+		font-size: 14px;
+	}
+`;
+
 export const Input = styled.input`
 	border-radius: 3px;
 	box-shadow: 5px 5px 10px hsl(212deg 49% 36% / 15%);
@@ -35,6 +43,10 @@ export const InputField = styled.div`
 export const InputTitle = styled.p`
 	margin-right: 15px;
 	width: max-content;
+
+	@media (max-width: 550px) {
+		font-size: 14px;
+	}
 `;
 
 export const InputErrorMessage = styled.span`

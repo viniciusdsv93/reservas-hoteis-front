@@ -68,7 +68,7 @@ const HotelUpdateInputs = () => {
 			<Link to={"/"}>
 				<Button content="Listar Hotéis" onClickHandler={() => {}} />
 			</Link>
-			<p>Por favor, altere os dados do hotel:</p>
+			<S.Paragraph>Por favor, altere os dados do hotel:</S.Paragraph>
 			<S.Form action="" onSubmit={handleSubmit(handleUpdateHotel)}>
 				<S.InputField>
 					<S.InputTitle

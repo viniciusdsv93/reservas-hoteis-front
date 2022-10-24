@@ -2,14 +2,16 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import React, { useContext, useState } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
+import swal from "sweetalert";
 import * as Yup from "yup";
 import { updateReservationContext } from "../../contexts/updateReservationContext";
+import { api } from "../../services/api/api";
 import { ReservationType } from "../../types/ReservationType";
 import Button from "../button";
 import * as S from "./styled";
 
 const updateReservationSchema = Yup.object().shape({
-	id_hotel: Yup.string().required("Insira o ID de um hotel"),
+	idHotel: Yup.string().required("Insira o ID de um hotel"),
 	numeroReserva: Yup.string().required("Insira o número da reserva"),
 	apartamento: Yup.string().required("Insira o número do apartamento"),
 	dataCheckIn: Yup.string().required("Insira a data de check-in"),
@@ -60,27 +62,27 @@ const ReservationsUpdateInputs = () => {
 	const handleUpdateReservation: SubmitHandler<ReservationType> = async (values) => {
 		console.log("values", values);
 
-		// const formattedGuests = values.hospedes?.map((guest) => {
-		// 	return {
-		// 		name: guest.nome,
-		// 		lastName: guest.sobrenome,
-		// 	};
-		// });
+		const formattedGuests = values.hospedes?.map((guest) => {
+			return {
+				name: guest.nome,
+				lastName: guest.sobrenome,
+			};
+		});
 
-		// try {
-		// 	const response = await api.post("/cadastrarReservaHospede", {
-		// 		id_hotel: values.id_hotel,
-		// 		reservationNumber: values.numeroReserva,
-		// 		apartment: values.apartamento,
-		// 		checkInDate: values.dataCheckIn,
-		// 		checkOutDate: values.dataCheckOut,
-		// 		status: values.status,
-		// 		guests: formattedGuests,
-		// 	});
-		// 	swal("Reserva atualizada com sucesso");
-		// } catch (error: any) {
-		// 	swal("Erro: Não foi possível atualizar a Reserva");
-		// }
+		try {
+			const response = await api.put("/atualizarReservaHospede", {
+				id_hotel: values.idHotel,
+				reservationNumber: values.numeroReserva,
+				apartment: values.apartamento,
+				checkInDate: values.dataCheckIn,
+				checkOutDate: values.dataCheckOut,
+				status: String(values.status),
+				guests: formattedGuests,
+			});
+			swal("Reserva atualizada com sucesso");
+		} catch (error: any) {
+			swal("Erro: Não foi possível atualizar a Reserva");
+		}
 	};
 
 	return (
@@ -88,7 +90,9 @@ const ReservationsUpdateInputs = () => {
 			<Link to={"/listReservations"}>
 				<Button content="Listar Reservas" onClickHandler={() => {}} />
 			</Link>
-			<p>Por favor, preencha os dados da reserva a ser atualizada:</p>
+			<S.Paragraph>
+				Por favor, preencha os dados da reserva a ser atualizada:
+			</S.Paragraph>
 			<S.Form action="" onSubmit={handleSubmit(handleUpdateReservation)}>
 				<S.InputField>
 					<S.InputTitle>ID Hotel:</S.InputTitle>
@@ -96,7 +100,7 @@ const ReservationsUpdateInputs = () => {
 						placeholder="Digite o ID do Hotel..."
 						type="text"
 						maxLength={100}
-						id="id_hotel"
+						id="idHotel"
 						{...register("idHotel")}
 					/>
 				</S.InputField>

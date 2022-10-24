@@ -9,6 +9,7 @@ export const GuestsModal = styled.div`
 	box-shadow: 10px 10px 100px hsl(212deg 49% 36% / 30%);
 	padding: 30px;
 	width: auto;
+	min-width: 200px;
 	background-color: #f8f8f8;
 	display: flex;
 	flex-direction: column;

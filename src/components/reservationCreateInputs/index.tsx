@@ -74,7 +74,9 @@ const ReservationsCreateInputs = () => {
 			<Link to={"/listReservations"}>
 				<Button content="Listar Reservas" onClickHandler={() => {}} />
 			</Link>
-			<p>Por favor, insira aqui os dados da reserva a ser cadastrada:</p>
+			<S.Paragraph>
+				Por favor, insira aqui os dados da reserva a ser cadastrada:
+			</S.Paragraph>
 			<S.Form action="" onSubmit={handleSubmit(handleInsertNewReservation)}>
 				<S.InputField>
 					<S.InputTitle>ID Hotel:</S.InputTitle>
